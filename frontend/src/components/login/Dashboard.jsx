@@ -18,6 +18,7 @@ export default function Dashboard() {
   return (
     <div>
       <h1>Welcome to your Dashboard{userName ? `, ${userName}` : '!'}</h1>
+      <button>Amazon Verification</button>
     </div>
   );
 }
