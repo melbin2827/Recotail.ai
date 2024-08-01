@@ -1,0 +1,111 @@
+.image-icon2,
+.image-icon3 {
+  position: absolute;
+  margin: 0 !important;
+}
+.image-icon2 {
+  height: 9.25rem;
+  width: 9.25rem;
+  top: -4rem;
+  right: -2.5rem;
+}
+.image-icon3 {
+  height: 15rem;
+  width: 15.188rem;
+  bottom: -5.75rem;
+  left: -2.875rem;
+}
+.container-icon {
+  align-self: stretch;
+  height: 3.688rem;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-bottom: 20px;
+}
+.heading-41 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  line-height: 1.513rem;
+  font-weight: 500;
+  font-family: inherit;
+  font-size: 16px;
+}
+.input1 {
+  border: 0;
+  background-color: transparent;
+  align-self: stretch;
+  height: 2.438rem;
+  font-family: var(--font-public-sans);
+  font-size: var(--font-size-mini);
+  color: var(--color-silver);
+  margin-top: 10px;
+}
+.heading-4-what-should-we-cal-parent {
+  align-self: stretch;
+  height: 4.375rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-4xs-8);
+}
+.backgroundborder {
+  align-self: stretch;
+  height: 2.406rem;
+  margin-top: 24px;
+}
+.backgroundshadow1,
+.frame-parent,
+.image-parent {
+  display: flex;
+  /* align-items: flex-start; */
+  justify-content: flex-start;
+}
+.frame-parent {
+  align-self: stretch;
+  flex-direction: column;
+  gap: var(--gap-base-7);
+}
+.backgroundshadow1,
+.image-parent {
+  max-width: 100%;
+}
+.backgroundshadow1 {
+  flex: 1;
+  box-shadow: 0 2px 6px rgba(67, 89, 113, 0.12);
+  border-radius: var(--br-5xs);
+  background-color: var(--color-white);
+  flex-direction: column;
+  padding: 1.5rem 1.5rem;
+  box-sizing: border-box;
+  gap: var(--gap-21xl);
+  z-index: 1;
+}
+.image-parent {
+  width: 460px;
+  flex-direction: row;
+  position: relative;
+  text-align: left;
+  font-size: var(--font-size-3xl);
+  color: var(--color-darkslategray);
+  font-family: var(--font-public-sans);
+}
+@media screen and (max-width: 450px) {
+  .heading-41 {
+    font-size: var(--font-size-lg);
+    line-height: 1.188rem;
+  }
+  .backgroundshadow1 {
+    gap: var(--gap-xl);
+  }
+}
+@media screen and (max-width: 400px) {
+  .backgroundborder {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+}
