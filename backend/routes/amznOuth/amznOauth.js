@@ -7,9 +7,8 @@ const redirectUrl = "http://localhost:4000/auth/amznOauth/redirect";
 const appID = process.env.APPLICATION_ID;
 
 router.get('/', (req, res) => {
-  console.log(req.query);
-  console.log("amzn Oauth");
-  res.redirect(`https://sellercentral.amazon.com/apps/authorize/consent?application_id=${appID}&version=beta&redirect_uri=${redirectUrl}`);
+  const oauthUrl = `https://sellercentral.amazon.com/apps/authorize/consent?application_id=${appID}&version=beta&redirect_uri=${redirectUrl}`;
+  res.redirect(oauthUrl); // Redirect to Amazon's OAuth page
 });
 
 router.get('/redirect', (req, res) => {

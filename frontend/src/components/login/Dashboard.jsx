@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import fetch from 'node-fetch';
-
 
 export default function Dashboard() {
   const [userName, setUserName] = useState('');
@@ -17,11 +15,10 @@ export default function Dashboard() {
     }
   }, [email]);
 
-  const response = await fetch('http://localhost:4000/auth/amznOuth', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, recaptchaResponse: value })
-  });
+  const handleAmazonVerification = () => {
+    // Directly change window location to the backend OAuth route
+    window.location.href = 'http://localhost:4000/auth/amznOuth';
+  };
 
   return (
     <div>
