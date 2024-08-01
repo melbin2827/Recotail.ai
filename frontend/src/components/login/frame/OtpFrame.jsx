@@ -70,7 +70,6 @@ export default function OtpFrame({ className = "" }) {
               "& .MuiInputBase-input": { color: "#b4bdc6" },
             }}
           />
-          <span class="d-grid w-100">Resend OTP in: 00:30</span>
           <button class="otp-btn" type="submit">Submit</button>
         </div>
         </form>
