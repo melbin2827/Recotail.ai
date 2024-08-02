@@ -96,46 +96,6 @@ export default function Dashboard() {
                       labelAMAZONREFRESHTOKEN="AMAZON REFRESH TOKEN"
                       containerPlaceholder="Enter Amazon Refresh Token"
                     />
-                    <div className="form-buttons">
-                      <Button
-                        className="button1"
-                        disableElevation
-                        variant="contained"
-                        sx={{
-                          textTransform: "none",
-                          color: "#530bae",
-                          fontSize: "15",
-                          background: "#e7e7ff",
-                          border: "#e7e7ff solid 1px",
-                          borderRadius: "6px",
-                          "&:hover": { background: "#e7e7ff" },
-                          width: 75.6,
-                          height: 38.5,
-                        }}
-                      >
-                        Save
-                      </Button>
-                      <Button
-                        className="button2"
-                        disableElevation
-                        variant="contained"
-                        sx={{
-                          textTransform: "none",
-                          color: "#ff3e1d",
-                          fontSize: "15",
-                          background: "#ffe0db",
-                          borderRadius: "6px",
-                          "&:hover": { background: "#ffe0db" },
-                          height: 38.5,
-                        }}
-                      >
-                        Cancel
-                      </Button>
-                    </div>
-                    <div className="to-find-out-container">
-                      <span className="to-find-out">{`To find out amazon setting guide `}</span>
-                      <a href="" className="click-here">click here</a>
-                    </div>
                   </div>
                   <div className="code-label">
                     <CodeInput
