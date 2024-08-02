@@ -7,6 +7,8 @@ import "./Dashboard.css";
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
+
+
 export default function Dashboard() {
 
   const [userName, setUserName] = useState('');
@@ -28,19 +30,17 @@ export default function Dashboard() {
   };
   
   return (
+
     <div className="add-store">
       <Aside />
+      
+      
       <section className="nav-wrapper-wrapper">
         <div className="nav-wrapper">
           <header className="nav">
             <div className="list-item-link">
-              <img
-                className="png-icon"
-                loading="lazy"
-                alt=""
-                src="/1png@2x.png"
-              />
-              <div className="backgroundshadow" />
+              <img className="png-icon" loading="lazy" alt="" src="/1png@2x.png"/>
+              <div className="backgroundshadow-dash" />
             </div>
           </header>
           <div className="home-store-link-parent">
@@ -49,7 +49,8 @@ export default function Dashboard() {
               <div className="home-store-items">/</div>
               <a className="add-store1">Add Store</a>
             </div>
-            <form className="backgroundshadow1">
+          <div class="amazon-form">  
+            <form className="backgroundshadowdash1">
               <div className="heading-wrapper">
                 <h3 className="heading-5">Amazon Account Configuration</h3>
               </div>
@@ -133,7 +134,7 @@ export default function Dashboard() {
                     </div>
                     <div className="to-find-out-container">
                       <span className="to-find-out">{`To find out amazon setting guide `}</span>
-                      <span className="click-here">click here</span>
+                      <a href="" className="click-here">click here</a>
                     </div>
                   </div>
                   <div className="code-label">
@@ -153,6 +154,7 @@ export default function Dashboard() {
                 </div>
               </div>
             </form>
+          </div>
           </div>
         </div>
       </section>
