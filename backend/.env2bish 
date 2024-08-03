@@ -5,7 +5,8 @@
     "expires_in": 3600
 }
 
-client_id = amzn1.application-oa2-client.386a0d52ba8d46f5ac0e740df7aaa845;
+client_id = amzn1.application-oa2-client.386a0d52ba8d46f5ac0e740df7aaa845
+
 client_secret = amzn1.oa2-cs.v1.d4a6c26e17029bee22852dabb6a7b85a4500b18107945ae0f96ccd490d4dbd46
 
 APPLICATION_ID = amzn1.sp.solution.591b8b7e-4d05-44ba-9259-8e4fb0a4669d

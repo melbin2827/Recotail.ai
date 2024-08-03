@@ -2,20 +2,43 @@ import express from 'express';
 const router = express.Router();
 import dotenv from "dotenv";
 dotenv.config();
+import axios from "axios";
+import crypto from "crypto";
 
-const redirectUrl = "http://localhost:4000/auth/amznOauth/redirect";
-const appID = "amzn1.sp.solution.591b8b7e-4d05-44ba-9259-8e4fb0a4669d";
+const redirectUrl = process.env.AMZN_REDIRECT_URL;
+const appID = process.env.APPLICATION_ID;
+const clientId = process.env.CLIENT_ID;
+const clientSecret = process.env.CLIENT_SECRET;
+const stateToken = crypto.randomUUID();
 
 router.get('/', (req, res) => {
   console.log('Oauth');
-  const oauthUrl = `https://sellercentral.amazon.com/apps/authorize/consent?application_id=${appID}&state=1234509876&version=beta`;
+  const oauthUrl = `https://sellercentral.amazon.com/apps/authorize/consent?application_id=${appID}&state=${stateToken}&version=beta`;
   res.redirect(oauthUrl); // Redirect to Amazon's OAuth page
 });
 
-router.post('/callback', (req, res) => {
+router.post('/callback', async(req, res) => {
   console.log('amzn auth callbacl', req.query);
-  const {spapi_oauth_code,state,selling_partner_id} = req.query;
-  const {refresh_token, access_token} = await axios.post(`https://api.amazon.com/auth/o2/token?grant_type=authorization_code&code=${spapi_oauth_code}&redirect_uri=recotail.ai&client_id=${}&client_secret=${}`)
+  try{
+    const {spapiOauthCode,state,sellingPartnerId} = req.query;
+    if(state != stateToken){
+      console.error("state token does not match");
+      return res.status(400).send("state token does not match");
+    }
+    const {refreshToken, accessToken} = await axios.post(`https://api.amazon.com/auth/o2/token?grant_type=authorization_code&code=${spapiOauthCode}&redirect_uri=${redirectUrl}&client_id=${clientId}&client_secret=${clientSecret}`);
+    const headers = {
+      'Authorization': `Bearer ${accessToken}`,
+      'x-amz-access-token': accessToken,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    };
+    const shopInfo = await axios.get(`sellingpartnerapi-na.amazon.com/sellers/v1/marketplaceParticipations`,{headers});
+    console.log(shopInfo.data);
+    res.send(shopInfo.data);
+  }
+  catch(err){
+    console.log(err);
+  }
 });
 
 export default router;
