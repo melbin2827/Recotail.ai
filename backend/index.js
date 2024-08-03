@@ -24,8 +24,12 @@ app.use('/auth/amznOuth',amznOuthRouter);
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log("Connected to MongoDB"))
-  .catch(err => console.error("Could not connect to MongoDB", err));
+.then(() => console.log("Connected to MongoDB"))
+.catch(err => console.error("Could not connect to MongoDB", err));
 
+amznOuthRouter.get('/', (req, res) => {
+  res.send("hello")
+}
+);
 
 app.listen(4000, () => console.log('Server listening on port 4000'));
