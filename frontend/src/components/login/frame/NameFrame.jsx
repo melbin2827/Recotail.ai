@@ -1,14 +1,12 @@
 import {
   TextField,
-  InputAdornment,
-  Icon,
-  IconButton,
   Button,
 } from "@mui/material";
 import "./NameFrame.css";
 
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { API_BASE_URL } from '../../../config'; // Import the base URL
 
 export default function NameFrame({ className = "" }) {
   const [name, setName] = useState('');
@@ -19,7 +17,7 @@ export default function NameFrame({ className = "" }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    const response = await fetch('http://localhost:4000/input-name', {
+    const response = await fetch(`${API_BASE_URL}/input-name`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, name })
@@ -86,4 +84,3 @@ export default function NameFrame({ className = "" }) {
     </div>
   );
 };
-
