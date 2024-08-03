@@ -70,7 +70,7 @@ export default function OtpFrame({ className = "" }) {
               "& .MuiInputBase-input": { color: "#b4bdc6" },
             }}
           />
-          <button class="otp-btn" type="submit">Submit</button>
+          <button className="otp-btn" type="submit">Submit</button>
         </div>
         </form>
       </div>

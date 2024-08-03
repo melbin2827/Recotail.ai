@@ -10,6 +10,8 @@ app.use(cors());
 import emailRouter from "./routes/auth/email.js";
 import userRouter from  "./routes/getUserDetails.js";
 import inputNameRouter from "./routes/auth/inputName.js";
+import amznOuthRouter from "./routes/amznOuth/amznOauth.js";
+
 dotenv.config();
 
 // applying middel ware
@@ -18,6 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/auth/email', emailRouter);
 app.use('/input-name',inputNameRouter)
 app.use('/user',userRouter);
+app.use('/auth/amznOuth',amznOuthRouter);
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI)

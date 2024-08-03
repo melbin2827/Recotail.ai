@@ -1,0 +1,312 @@
+.backgroundshadow-dash,
+.png-icon {
+  position: absolute;
+  overflow: hidden;
+}
+.png-icon {
+  top: calc(50% - 20px);
+  left: 0;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.backgroundshadow-dash {
+  right: 0.188rem;
+  bottom: 0.125rem;
+  box-shadow: 0 0 0 2px #fff;
+  border-radius: var(--br-5xs);
+  background-color: #71dd37;
+  width: 0.5rem;
+  height: 0.5rem;
+  z-index: 1;
+}
+.list-item-link {
+  height: 2.5rem;
+  width: 2.375rem;
+  position: relative;
+}
+.nav {
+  align-self: stretch;
+  box-shadow: 0 0 6px 4px rgba(161, 172, 184, 0.15);
+  backdrop-filter: blur(6px);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.95);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  top: 0;
+  z-index: 99;
+  position: sticky;
+}
+.item-link {
+  text-decoration: none;
+  line-height: 1rem;
+  color: inherit;
+  min-width: 1.75rem;
+}
+.add-store1,
+.home-store-items,
+.item-link {
+  position: relative;
+  display: inline-block;
+}
+.home-store-items {
+  line-height: 1rem;
+  color: var(--gull-gray);
+  min-width: 0.25rem;
+}
+.add-store1 {
+  text-decoration: none;
+  line-height: 0.956rem;
+  color: inherit;
+  min-width: 2.944rem;
+}
+.home-store-link {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-xl) 0 0;
+  gap: 0.468rem;
+  font-size: 10px;
+  color: #193A54;
+}
+.heading-5 {
+  margin: 0;
+  position: relative;
+  font-size: var(--font-size-lg);
+  line-height: 1.25rem;
+  font-weight: 500;
+  font-family: var(--public-sans-regular-12);
+  color: #193A54;
+  text-align: left;
+}
+.heading-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-5xl) 0.306rem;
+}
+.please-click-here {
+  position: relative;
+  font-size: var(--font-size-mini);
+  line-height: 1.438rem;
+  font-family: var(--public-sans-regular-12);
+  color: #193A54;
+  text-align: left;
+  flex-shrink: 0;
+}
+.please-click-here-to-verify-yo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0.381rem 0 0;
+}
+.button {
+  height: 2.406rem;
+  width: 7.15rem;
+  flex-shrink: 0;
+}
+.verify-instruction,
+.verify-instruction-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.verify-instruction {
+  gap: 0.675rem;
+}
+.verify-instruction-wrapper {
+  padding: 0 var(--padding-5xl);
+  box-sizing: border-box;
+}
+.separator {
+  align-self: stretch;
+  height: 0.063rem;
+  position: relative;
+  background-color: var(--color-gainsboro);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.config-form {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.506rem;
+  max-width: 100%;
+}
+.button1 {
+  height: 2.406rem;
+  width: 4.725rem;
+}
+.button2 {
+  height: 2.406rem;
+  flex: 1;
+}
+.form-buttons {
+  width: 11.069rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 0.231rem;
+  box-sizing: border-box;
+  gap: 0.725rem;
+}
+.to-find-out {
+  color: var(--nile-blue);
+}
+.click-here {
+  color: #530bae;
+  text-decoration: none;
+}
+.to-find-out-container {
+  position: relative;
+  font-size: var(--font-size-mini);
+  line-height: 1.438rem;
+  font-family: var(--public-sans-regular-12);
+  text-align: left;
+  color: #193A54;
+}
+.code-label {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-xl);
+  min-width: 26.625rem;
+  max-width: 100%;
+}
+
+
+
+.backgroundshadowdash1,
+.code-label,
+.o-auth-code,
+.o-auth-code-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+
+.o-auth-code {
+  flex: 1;
+  flex-direction: row;
+  gap: 1.675rem;
+  max-width: 100%;
+}
+.backgroundshadowdash1,
+.o-auth-code-wrapper {
+  box-sizing: border-box;
+}
+.o-auth-code-wrapper {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 1.562rem 0 var(--padding-5xl);
+  max-width: 100%;
+}
+
+.backgroundshadowdash1 {
+  margin: 0;
+  /* box-shadow: 0 2px 6px rgba(67, 89, 113, 0.12); */
+  border-radius: var(--br-5xs);
+  background-color: var(--white);
+  padding: 10px 0px;
+  gap: 1.7rem;
+}
+
+.backgroundshadowdash1,
+.home-store-link-parent,
+.nav-wrapper {
+  align-self: stretch;
+  flex-direction: column;
+  max-width: 100%;
+}
+.home-store-link-parent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.956rem;
+}
+.nav-wrapper {
+  gap: 1.618rem;
+  padding: 0px 24px;
+}
+.add-store,
+.nav-wrapper,
+.nav-wrapper-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.nav-wrapper-wrapper {
+  width: 80rem;
+  flex-direction: column;
+  padding: var(--padding-xs) 0 0;
+  box-sizing: border-box;
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--font-size-3xs);
+  color: var(--nile-blue);
+  font-family: var(--public-sans-regular-12);
+}
+.add-store {
+  width: 100%;
+  position: relative;
+  background: linear-gradient(#f5f5f9, #f5f5f9), #fff;
+  overflow-y: auto;
+  flex-direction: row;
+  /* gap: 8.5rem; */
+  line-height: normal;
+  letter-spacing: normal;
+}
+.amazon-form {
+  background-color: #fff;
+  width: 100%;
+  padding: 24px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px 0 rgba(67, 89, 113, 0.12);
+}
+@media screen and (max-width: 1700px) {
+  /* .add-store {
+    flex-wrap: wrap;
+  } */
+}
+@media screen and (max-width: 1325px) {
+  .o-auth-code {
+    flex-wrap: wrap;
+  }
+  .add-store {
+    gap: 4.25rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .code-label {
+    min-width: 100%;
+  }
+  .backgroundshadowdash1 {
+    padding-top: var(--padding-xl);
+    padding-bottom: 1.625rem;
+    box-sizing: border-box;
+  }
+  .add-store {
+    gap: 2.125rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .verify-instruction {
+    flex-wrap: wrap;
+  }
+  .add-store {
+    gap: 1.063rem;
+  }
+}

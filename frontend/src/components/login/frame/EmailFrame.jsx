@@ -61,7 +61,7 @@ export default function EmailFrame({ className = "" }) {
             Please sign-in to your account and start the adventure
           </div>
         </div>
-        <div class="login-mail">
+        <div className="login-mail">
         <form onSubmit={handleContinueClick}>
         <div className="login-form">
           <div className="email-field">

@@ -1,8 +1,6 @@
 import express from 'express';
 const router = express.Router();
-import mongoose from "mongoose";
 import User from '../../models/user.js';
-import crypto from "crypto";
 import fetch from "node-fetch";
 import sgMail from "@sendgrid/mail";
 

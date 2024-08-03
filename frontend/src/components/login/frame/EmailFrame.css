@@ -91,7 +91,7 @@
   max-width: 100%;
 }
 .enter-your-email {
-  width: 272px;
+  width: 100%;
   border: 0;
   outline: 0;
   font-family: var(--font-public-sans);
