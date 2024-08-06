@@ -312,3 +312,21 @@
     gap: 1.063rem;
   }
 }
+
+.profile-icon .css-i4bv87-MuiSvgIcon-root {
+  width: 30px !important;
+  height: 30px !important;
+}
+.header .list-item-link {
+  height: auto;
+  width: auto;
+}
+.css-6hp17o-MuiList-root-MuiMenu-list .p-link {
+  font-size: 12px;
+    color: #193a54;
+    font-weight: 500;
+    padding: 10px 16px;
+}
+.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+  left: 1400px !important;
+}

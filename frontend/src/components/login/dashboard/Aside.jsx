@@ -65,7 +65,7 @@ const Sidebar = () => {
           <ListItemIcon className='link-icon'><FbaFulfillmentIcon /></ListItemIcon>
           <ListItemText className='link-text' primary="FBA Fulfillment" />
         </ListItem>
-        <ListItem button component={Link} to="/fba-fulfillment" className='menu-link'>
+        <ListItem button component={Link} to="/ledger-detail" className='menu-link'>
           <ListItemIcon className='link-icon'><ArticleIcon /></ListItemIcon>
           <ListItemText className='link-text' primary="Ledger Detail" />
         </ListItem>
@@ -73,23 +73,23 @@ const Sidebar = () => {
           <ListItemIcon><FbaInventoryIcon /></ListItemIcon>
           <ListItemText className='link-text' primary="FBA Inventory" />
         </ListItem>
-        <ListItem button component={Link} to="/fba-inbound" className='menu-link'>
+        <ListItem button component={Link} to="/fba-fulfillment-inbound" className='menu-link'>
           <ListItemIcon><FbaInboundIcon /></ListItemIcon>
           <ListItemText className='link-text' primary="FBA Fulfillment Inbound" />
         </ListItem>
-        <ListItem button component={Link} to="/fba-inbound" className='menu-link'>
+        <ListItem button component={Link} to="/fba-fulfillment-removal-shipment" className='menu-link'>
           <ListItemIcon><RemoveShoppingCartIcon /></ListItemIcon>
           <ListItemText className='link-text' primary="FBA Fulfillment Removal Shipment" />
         </ListItem>
-        <ListItem button component={Link} to="/fba-inbound" className='menu-link'>
+        <ListItem button component={Link} to="/fba-fulfillment-removal-order" className='menu-link'>
           <ListItemIcon><MobiledataOffIcon /></ListItemIcon>
           <ListItemText className='link-text' primary="FBA Fulfillment Removal Order" />
         </ListItem>
-        <ListItem button component={Link} to="/fba-removals" className='menu-link'>
+        <ListItem button component={Link} to="/fba-lost-damaged-customer-returns" className='menu-link'>
           <ListItemIcon><PlaylistRemoveIcon /></ListItemIcon>
           <ListItemText className='link-text' primary="FBA Lost & Damaged Customer Returns" />
         </ListItem>
-        <ListItem button component={Link} to="/icons" className='menu-link'>
+        <ListItem button component={Link} to="/fba-inbound-shipments" className='menu-link'>
           <ListItemIcon><IconsIcon /></ListItemIcon>
           <ListItemText className='link-text' primary="FBA Inbound Shipments" />
         </ListItem>
@@ -97,11 +97,11 @@ const Sidebar = () => {
           <ListItemIcon><RemoveDoneIcon /></ListItemIcon>
           <ListItemText className='link-text' primary="FBA Removals" />
         </ListItem>
-        <ListItem button component={Link} to="/fba-removals" className='menu-link'>
+        <ListItem button component={Link} to="/fba-weight-dimensions" className='menu-link'>
           <ListItemIcon><MonitorWeightIcon /></ListItemIcon>
           <ListItemText className='link-text' primary="FBA Weight Dimensions" />
         </ListItem>
-        <ListItem button component={Link} to="/fba-removals" className='menu-link'>
+        <ListItem button component={Link} to="/add-store" className='menu-link'>
           <ListItemIcon><AddIcon /></ListItemIcon>
           <ListItemText className='link-text' primary="Add Store" />
         </ListItem>
