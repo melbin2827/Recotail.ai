@@ -12,7 +12,7 @@ const clientSecret = process.env.CLIENT_SECRET;
 let stateToken = crypto.randomUUID();
 
 router.get('/', (req, res) => {
-  console.log('Oauth');
+  // console.log('Oauth');
   const oauthUrl = `https://sellercentral.amazon.com/apps/authorize/consent?application_id=${appID}&state=${stateToken}&version=beta`;
   res.redirect(oauthUrl); // Redirect to Amazon's OAuth page
 });
@@ -26,16 +26,18 @@ router.post('/callback', async(req, res) => {
     }
 
     // get refresh token using spapi_oauth_code
-    const {refreshToken, accessToken} = await axios.post(`https://api.amazon.com/auth/o2/token?grant_type=authorization_code&code=${spapi_oauth_code}&client_id=${clientId}&client_secret=${clientSecret}`);
-    if(!refreshToken){
-      console.error("fail to get access token");
-      return res.status(400).send("Fail to get access token");
+    const {refresh_token, access_token}= await axios.post(`https://api.amazon.com/auth/o2/token?grant_type=authorization_code&code=${spapi_oauth_code}&client_id=${clientId}&client_secret=${clientSecret}`);
+    console.log(refresh_token, access_token);
+    // const {refresh_token: refreshToken} = ressponce.data;
+    if(!refresh_token){
+      console.error("fail to get refresh_token token");
+      return res.status(400).send("Fail to get refresh_token token");
     }
     
     res.json({
-      oauth_code: spapi_oauth_code,
+      // oauth_code: spapi_oauth_code,
       amazonselling_partner_id: selling_partner_id,
-      refresh_token: refreshToken
+      refresh_token: refresh_token
     }).status(200);
   }
   catch(err){

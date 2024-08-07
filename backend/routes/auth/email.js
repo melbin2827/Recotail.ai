@@ -2,7 +2,6 @@ import express from 'express';
 const router = express.Router();
 import mongoose from "mongoose";
 import User from '../../models/user.js';
-import crypto from "crypto";
 import fetch from "node-fetch";
 import sgMail from "@sendgrid/mail";
 
@@ -66,22 +65,11 @@ router.post('/verify-otp', async (req, res) => {
   // Check if the email already exists in the database
   let user = await User.findOne({ email });
 
-  if (!user) {
-    // Create a new user document if it doesn't exist
-    user = new User({
-      email,
-      name: '', // Name will be added later
-      verified: true
-    });
-
-    await user.save();
-  }
-
   // Remove the OTP from temporary storage
   delete otpStorage[email];
   tempEmail = '';
 
-  res.send({ message: 'Email Verified', isNewUser: !user.name });
+  res.send({ message: 'Email Verified', isNewUser: !user });
 });
 
 export default router;
