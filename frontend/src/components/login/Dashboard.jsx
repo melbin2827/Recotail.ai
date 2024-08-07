@@ -101,13 +101,11 @@ export default function Dashboard() {
                     <div className="code-label">
                       <CodeInput labelAMAZONOAUTHCODE="AMAZON OAUTH CODE" enterAmazonOauthCPlacehol=" Enter Amazon Oauth Code"/>
                       <RefreshToken labelAMAZONREFRESHTOKEN="AMAZON REFRESH TOKEN" containerPlaceholder="Enter Amazon Refresh Token"/>
+                      <RefreshToken propHeight="4.056rem" propPadding="unset" labelAMAZONREFRESHTOKEN="AMAZON NAME" containerPlaceholder="Enter Amazon Name"/>
                     </div>
                     <div className="code-label">
                       <CodeInput propGap="0.593rem" labelAMAZONOAUTHCODE="AMAZON SELLING PARTNER ID" enterAmazonOauthCPlacehol="Enter Amazon Selling Partner Id" propWidth="13.938rem"/>
                       <RefreshToken propHeight="4.056rem" propPadding="unset" labelAMAZONREFRESHTOKEN="AMAZON SHOP NAME" containerPlaceholder="Enter Amazon Shop Name"/>
-                    </div>
-                    <div className="code-label">
-                    <RefreshToken propHeight="4.056rem" propPadding="unset" labelAMAZONREFRESHTOKEN="AMAZON NAME" containerPlaceholder="Enter Amazon Name"/>
                     </div>
                   </div>
                 </div>
