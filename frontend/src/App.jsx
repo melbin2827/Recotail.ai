@@ -6,6 +6,7 @@ import EmailInput from "./components/login/Email.jsx";
 import Otp from './components/login/Otp.jsx';
 import Name from './components/login/Name.jsx';
 import Dashboard from './components/login/Dashboard.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import AmazonCallback from './components/AmazonCallback.jsx'; // Import the new component
 
 export default function App() {
