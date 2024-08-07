@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Button, IconButton, Menu, MenuItem } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+import { API_BASE_URL } from '../../config'; 
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Aside from "./dashboard/Aside";
 import CodeInput from "./dashboard/CodeInput";
@@ -27,7 +27,7 @@ export default function Dashboard() {
   }, [email]);
 
   const handleAmazonVerification = () => {
-    window.location.href = 'http://localhost:4000/auth/amznOuth';
+    window.location.href = `${API_BASE_URL}/auth/amznOuth`;
   };
 
   const handleMenuClick = (event) => {
