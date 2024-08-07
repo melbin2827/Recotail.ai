@@ -84,7 +84,7 @@ export default function Dashboard() {
                           * Please click here to verify your account.
                         </div>
                       </div>
-                      <Button className="button" disableElevation variant="contained" onClick={handleAmazonVerification}
+                      <Button className="button b1" disableElevation variant="contained" onClick={handleAmazonVerification}
                         sx={{
                           textTransform: "none", color: "#530bae", fontSize: "15", background: "#e7e7ff", border: "#e7e7ff solid 1px", borderRadius: "6px",
                           "&:hover": { background: "#e7e7ff" }, width: 114.4, height: 38.5,
@@ -106,8 +106,19 @@ export default function Dashboard() {
                       <CodeInput propGap="0.593rem" labelAMAZONOAUTHCODE="AMAZON SELLING PARTNER ID" enterAmazonOauthCPlacehol="Enter Amazon Selling Partner Id" propWidth="13.938rem"/>
                       <RefreshToken propHeight="4.056rem" propPadding="unset" labelAMAZONREFRESHTOKEN="AMAZON SHOP NAME" containerPlaceholder="Enter Amazon Shop Name"/>
                     </div>
+                    <div className="code-label">
+                    <RefreshToken propHeight="4.056rem" propPadding="unset" labelAMAZONREFRESHTOKEN="AMAZON NAME" containerPlaceholder="Enter Amazon Name"/>
+                    </div>
                   </div>
                 </div>
+                <Button className="button b1" disableElevation variant="contained" onClick={handleAmazonVerification}
+                        sx={{
+                          textTransform: "none", color: "#530bae", fontSize: "15", background: "#e7e7ff", border: "#e7e7ff solid 1px", borderRadius: "6px",
+                          "&:hover": { background: "#e7e7ff" }, width: 114.4, height: 38.5,
+                        }}
+                      >
+                        Save
+                </Button>
               </form>
             </div>
           </div>

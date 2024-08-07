@@ -330,3 +330,11 @@
 .css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
   left: 1400px !important;
 }
+
+.b1:hover {
+  background-color: #530bae;
+  color: #fff;
+}
+.container24 {
+  color: #b7b7bc !important;
+}
