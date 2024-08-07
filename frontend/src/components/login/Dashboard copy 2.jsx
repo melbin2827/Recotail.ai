@@ -15,6 +15,10 @@ export default function Dashboard() {
   const amazon_selling_partner_id = location.state?.amazon_selling_partner_id || '';
   const refresh_token = location.state?.refresh_token || '';
 
+
+  console.log(amazon_selling_partner_id);
+  console.log(refresh_token);
+
   // State for managing the dropdown menu
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -81,22 +85,6 @@ export default function Dashboard() {
                 <div className="heading-wrapper">
                   <h3 className="heading-5">Amazon Account Configuration</h3>
                 </div>
-                
-                <div className="o-auth-code-wrapper">
-                  <div className="o-auth-code">
-                    <div className="code-label">
-                      <CodeInput labelAMAZONOAUTHCODE="Amazon Shop Name" enterAmazonOauthCPlacehol=" Enter Amazon Shop Name"/>
-                      </div>
-                      <div className="code-labl">
-                      <label className='label-amazon' htmlFor="vendorSeller" style={{  }}>Vendor/Seller</label>
-                      <select id="vendorSeller" className='select-option' value={selectedOption} onChange={handleOptionChange} style={{ width: '100%', padding: '0.5rem' }}>
-                        <option value="DEFAULT">Select one</option>
-                        <option value="VENDOR">Vendor</option>
-                        <option value="SELLER">Seller</option>
-                      </select>
-                    </div>
-                  </div> 
-                </div>
                 <div className="config-form">
                   <div className="verify-instruction-wrapper">
                     <div className="verify-instruction">
@@ -115,17 +103,39 @@ export default function Dashboard() {
                       </Button>
                     </div>
                   </div>
-                  {/* <div className="separator" /> */}
+                  <div className="separator" />
                 </div>
                 <div className="o-auth-code-wrapper">
-                  <div className="o-auth-code"> 
+                  <div className="o-auth-code">
                     <div className="code-label">
-                    <RefreshToken labelAMAZONREFRESHTOKEN="Amazon Selling Partner Id" containerPlaceholder={amazon_selling_partner_id}/>
-                      <RefreshToken propHeight="4.056rem" propPadding="unset" labelAMAZONREFRESHTOKEN="Amazon Refresh Token" containerPlaceholder={refresh_token} />
+                      <CodeInput labelAMAZONOAUTHCODE="AMAZON SHOP NAME" enterAmazonOauthCPlacehol=" Enter Amazon Shop Name" />
+                      <RefreshToken labelAMAZONREFRESHTOKEN="AMAZON SELLING PARTNER ID" containerPlaceholder={amazon_selling_partner_id} />
+                      <RefreshToken propHeight="4.056rem" propPadding="unset" labelAMAZONREFRESHTOKEN="AMAZON REFRESH TOKEN" containerPlaceholder={refresh_token} />
                     </div>
-                    
+                    <div className="code-label">
+                      <label htmlFor="vendorSeller" style={{ marginBottom: '0.593rem', width: '13.938rem' }}>Vendor/Seller</label>
+                      <select
+                        id="vendorSeller"
+                        value={selectedOption}
+                        onChange={handleOptionChange}
+                        style={{ width: '13.938rem', padding: '0.5rem' }}
+                      >
+                        <option value="DEFAULT">Select one</option>
+                        <option value="VENDOR">Vendor</option>
+                        <option value="SELLER">Seller</option>
+                      </select>
+                      <RefreshToken propHeight="4.056rem" propPadding="unset" labelAMAZONREFRESHTOKEN="AMAZON OAUTH CODE" />
+                    </div>
                   </div>
                 </div>
+                <Button className="button b1" disableElevation variant="contained" onClick={handleAmazonVerification}
+                        sx={{
+                          textTransform: "none", color: "#530bae", fontSize: "15", background: "#e7e7ff", border: "#e7e7ff solid 1px", borderRadius: "6px",
+                          "&:hover": { background: "#e7e7ff" }, width: 114.4, height: 38.5,
+                        }}
+                      >
+                        Save
+                </Button>
               </form>
             </div>
           </div>
