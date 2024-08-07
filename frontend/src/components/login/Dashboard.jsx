@@ -12,6 +12,12 @@ export default function Dashboard() {
   const [userName, setUserName] = useState('');
   const location = useLocation();
   const email = location.state?.email;
+  const amazon_selling_partner_id = location.state?.amazon_selling_partner_id || '';
+  const refresh_token = location.state?.refresh_token || '';
+
+
+  console.log(amazon_selling_partner_id);
+  console.log(refresh_token);
 
   // State for managing the dropdown menu
   const [anchorEl, setAnchorEl] = useState(null);
@@ -102,9 +108,9 @@ export default function Dashboard() {
                 <div className="o-auth-code-wrapper">
                   <div className="o-auth-code">
                     <div className="code-label">
-                      <CodeInput labelAMAZONOAUTHCODE="AMAZON SHOP NAME" enterAmazonOauthCPlacehol=" Enter Amazon Shop Name"/>
-                      <RefreshToken labelAMAZONREFRESHTOKEN="AMAZON SELLING PARTNER ID" containerPlaceholder=""/>
-                      <RefreshToken propHeight="4.056rem" propPadding="unset" labelAMAZONREFRESHTOKEN="AMAZON REFRESH TOKEN" />
+                      <CodeInput labelAMAZONOAUTHCODE="AMAZON SHOP NAME" enterAmazonOauthCPlacehol=" Enter Amazon Shop Name" />
+                      <RefreshToken labelAMAZONREFRESHTOKEN="AMAZON SELLING PARTNER ID" containerPlaceholder={amazon_selling_partner_id} />
+                      <RefreshToken propHeight="4.056rem" propPadding="unset" labelAMAZONREFRESHTOKEN="AMAZON REFRESH TOKEN" containerPlaceholder={refresh_token} />
                     </div>
                     <div className="code-label">
                       <label htmlFor="vendorSeller" style={{ marginBottom: '0.593rem', width: '13.938rem' }}>Vendor/Seller</label>
@@ -118,7 +124,7 @@ export default function Dashboard() {
                         <option value="VENDOR">Vendor</option>
                         <option value="SELLER">Seller</option>
                       </select>
-                      <RefreshToken propHeight="4.056rem" propPadding="unset" labelAMAZONREFRESHTOKEN="AMAZON OAUTH CODE" containerPlaceholder=""/>
+                      <RefreshToken propHeight="4.056rem" propPadding="unset" labelAMAZONREFRESHTOKEN="AMAZON OAUTH CODE" />
                     </div>
                   </div>
                 </div>
