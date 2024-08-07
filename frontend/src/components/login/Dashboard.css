@@ -250,6 +250,7 @@
 }
 .nav-wrapper-wrapper {
   width: 80rem;
+  height: 100vh;
   flex-direction: column;
   padding: var(--padding-xs) 0 0;
   box-sizing: border-box;
@@ -261,6 +262,7 @@
 }
 .add-store {
   width: 100%;
+
   position: relative;
   background: linear-gradient(#f5f5f9, #f5f5f9), #fff;
   overflow-y: auto;
@@ -309,4 +311,22 @@
   .add-store {
     gap: 1.063rem;
   }
+}
+
+.profile-icon .css-i4bv87-MuiSvgIcon-root {
+  width: 30px !important;
+  height: 30px !important;
+}
+.header .list-item-link {
+  height: auto;
+  width: auto;
+}
+.css-6hp17o-MuiList-root-MuiMenu-list .p-link {
+  font-size: 12px;
+    color: #193a54;
+    font-weight: 500;
+    padding: 10px 16px;
+}
+.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+  left: 1400px !important;
 }
