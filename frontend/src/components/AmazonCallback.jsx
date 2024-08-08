@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
-import "./login/Dashboard.css";
+import "./dashboard/Dashboard.css";
 
 const AmazonCallback = () => {
   const location = useLocation();
