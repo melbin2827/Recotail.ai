@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
+import "./login/Dashboard.css";
 
 const AmazonCallback = () => {
   const location = useLocation();
@@ -57,8 +60,10 @@ const AmazonCallback = () => {
   }, [location.search, navigate]);
 
   return (
-    <div>
-      Processing your Amazon authorization...
+    <div className="loader">
+      <Box sx={{ display: 'flex' }}>
+      <CircularProgress />
+    </Box>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import "./Otp.css";
 
 export default function Otp() {
   return (
-    <div className="container">
+    <div className="container1">
       <OtpFrame/>
     </div>
   );
