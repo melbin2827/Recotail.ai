@@ -60,6 +60,8 @@ router.post('/callback', async (req, res) => {
     stateTokenGlobal = null;
 
     // Send the tokens back to the frontend
+    console.log(selling_partner_id);
+    console.log(refresh_token);
     res.json({ amazon_selling_partner_id: selling_partner_id, refresh_token });
 
   } catch (err) {
