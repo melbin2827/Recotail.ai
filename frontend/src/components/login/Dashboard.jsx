@@ -7,6 +7,9 @@ import { API_BASE_URL } from '../../config';
 import CodeInput from "./dashboard/CodeInput";
 import RefreshToken from "./dashboard/RefreshToken";
 import "./Dashboard.css";
+import Alert from '@mui/material/Alert';
+import CheckIcon from '@mui/icons-material/Check';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
 export default function Dashboard() {
   const [userName, setUserName] = useState('');
@@ -79,9 +82,11 @@ export default function Dashboard() {
             <div className="amazon-form">
               <form className="backgroundshadowdash1">
                 <div className="heading-wrapper">
-                  <h3 className="heading-5">Amazon Account Configuration</h3>
+                  <h3 className="heading-5">Amazon Account Configuration <CheckBoxIcon /></h3>
                 </div>
-                
+                <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
+                  Here is a gentle confirmation that your action was successful.
+                </Alert>
                 <div className="o-auth-code-wrapper">
                   <div className="o-auth-code">
                     <div className="code-label">
@@ -117,15 +122,14 @@ export default function Dashboard() {
                   </div>
                   {/* <div className="separator" /> */}
                 </div>
-                <div className="o-auth-code-wrapper">
+                {/* <div className="o-auth-code-wrapper">
                   <div className="o-auth-code"> 
                     <div className="code-label">
                     <RefreshToken labelAMAZONREFRESHTOKEN="Amazon Selling Partner Id" containerPlaceholder={amazon_selling_partner_id}/>
-                      <RefreshToken propHeight="4.056rem" propPadding="unset" labelAMAZONREFRESHTOKEN="Amazon Refresh Token" containerPlaceholder={refresh_token} />
-                    </div>
-                    
+                    <RefreshToken propHeight="4.056rem" propPadding="unset" labelAMAZONREFRESHTOKEN="Amazon Refresh Token" containerPlaceholder={refresh_token} />
+                    </div>  
                   </div>
-                </div>
+                </div> */}
               </form>
             </div>
           </div>

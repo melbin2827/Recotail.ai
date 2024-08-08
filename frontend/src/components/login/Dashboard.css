@@ -84,6 +84,12 @@
   font-family: var(--public-sans-regular-12);
   color: #193A54;
   text-align: left;
+  margin-right: 10px;
+}
+.heading-5 .css-i4bv87-MuiSvgIcon-root {
+  color: #34b233;
+  width: 30px !important;
+  height: 30px !important;
 }
 .heading-wrapper {
   display: flex;
