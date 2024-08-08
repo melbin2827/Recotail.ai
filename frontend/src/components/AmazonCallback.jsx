@@ -25,7 +25,7 @@ const AmazonCallback = () => {
 
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:4000/auth/amznOuth/handleCallback', {
+        const response = await fetch('http://localhost:4000/auth/amznOuth/callback', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

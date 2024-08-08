@@ -78,7 +78,7 @@ router.post('/verify-otp', async (req, res) => {
     res.send({ message: 'Email Verified', isNewUser: true });
   }
 
-  else{const token = jwt.sign({_id: user._id, email: user.email, name: user.name, shopLlist: user.shopList  }, process.env.JWT_SECRET);
+  else{const token = jwt.sign({_id: user._id, email: user.email, name: user.name, shopLlist: user.shopList  }, 'blah');
     console.log('User found:', user);
     
     res

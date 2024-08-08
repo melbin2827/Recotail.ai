@@ -18,13 +18,13 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Session middleware
-app.use(session({
-  secret: process.env.SESSION_SECRET || 'your_secret_key',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: false } // Set secure: true if using https
-}));
+// // Session middleware
+// app.use(session({
+//   secret: process.env.SESSION_SECRET || 'your_secret_key',
+//   resave: false,
+//   saveUninitialized: true,
+//   cookie: { secure: false } // Set secure: true if using https
+// }));
 
 app.use('/auth/email', emailRouter);
 app.use('/input-name', inputNameRouter);

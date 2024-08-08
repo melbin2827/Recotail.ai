@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
   res.redirect(oauthUrl);  // Redirect to Amazon's OAuth page
 });
 
-router.post('/handleCallback', async (req, res) => {
+router.post('/callback', async (req, res) => {
   try {
     const { url } = req.body;
     const parsedUrl = new URL(url);

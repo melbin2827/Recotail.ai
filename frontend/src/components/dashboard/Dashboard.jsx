@@ -82,7 +82,7 @@ export default function Dashboard() {
             <div className="amazon-form">
               <form className="backgroundshadowdash1">
                 <div className="heading-wrapper">
-                  <h3 className="heading-5">Amazon Account Configuration <CheckBoxIcon /></h3>
+                  <h3 className="heading-5">Amazon Account Configuration</h3>
                 </div>
                 <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
                   Your Amazon Credentials have been verified
@@ -90,7 +90,7 @@ export default function Dashboard() {
                 <div className="o-auth-code-wrapper">
                   <div className="o-auth-code">
                     <div className="code-label">
-                      <CodeInput labelAMAZONOAUTHCODE="Amazon Shop Name" enterAmazonOauthCPlacehol=" Enter Amazon Shop Name"/>
+                      <CodeInput labelAMAZONOAUTHCODE="Amazon Shop Name*" enterAmazonOauthCPlacehol=" Enter Amazon Shop Name"/>
                       </div>
                       <div className="code-labl">
                       <label className='label-amazon' htmlFor="vendorSeller" style={{  }}>Vendor/Seller</label>
