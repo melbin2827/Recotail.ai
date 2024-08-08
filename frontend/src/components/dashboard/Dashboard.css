@@ -84,6 +84,12 @@
   font-family: var(--public-sans-regular-12);
   color: #193A54;
   text-align: left;
+  margin-right: 10px;
+}
+.heading-5 .css-i4bv87-MuiSvgIcon-root {
+  color: #34b233;
+  width: 30px !important;
+  height: 30px !important;
 }
 .heading-wrapper {
   display: flex;
@@ -180,14 +186,11 @@
 }
 .code-label {
   flex: 1;
-  flex-direction: column;
-  gap: var(--gap-xl);
-  min-width: 26.625rem;
+  flex-direction: row;
+  gap: 0.593rem;
+  /* min-width: 100%; */
   max-width: 100%;
 }
-
-
-
 .backgroundshadowdash1,
 .code-label,
 .o-auth-code,
@@ -201,7 +204,7 @@
 .o-auth-code {
   flex: 1;
   flex-direction: row;
-  gap: 1.675rem;
+  gap: 0.593rem;
   max-width: 100%;
 }
 .backgroundshadowdash1,
@@ -329,4 +332,43 @@
 }
 .css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
   left: 1400px !important;
+}
+
+.b1:hover {
+  background-color: #530bae;
+  color: #fff;
+}
+.container24 {
+  color: #768a99 !important
+}
+.select-option {
+  border-radius: 5px;
+  border: 1px solid var(--color-gainsboro);
+  font-size: 14px;
+  color: #193a54;
+  margin-top: 7px;
+  height: 2.44rem;
+  background-color: #fff;
+}
+.label-amazon {
+  text-align: left;
+    font-size: 0.75rem;
+    color: #193A54;
+    font-family: var(--public-sans-regular-12);
+}
+.input3 {
+  background-color: #f5f5f9;
+}
+.code-input, .refresh-token  {
+  width: 100%;
+}
+.code-labl {
+  width: 50%;
+}
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 10px;
+  margin-top: 300px;
 }

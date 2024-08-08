@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Button, IconButton, Menu, MenuItem } from '@mui/material';
-import { API_BASE_URL } from '../../config'; 
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import Aside from "./dashboard/Aside";
-import CodeInput from "./dashboard/CodeInput";
-import RefreshToken from "./dashboard/RefreshToken";
+import Aside from "./Aside";
+import { API_BASE_URL } from '../../config'; 
+import CodeInput from "./CodeInput";
+// import RefreshToken from "./dashboard/RefreshToken";
 import "./Dashboard.css";
+import Alert from '@mui/material/Alert';
+import CheckIcon from '@mui/icons-material/Check';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
 export default function Dashboard() {
   const [userName, setUserName] = useState('');
   const location = useLocation();
   const email = location.state?.email;
+  const amazon_selling_partner_id = location.state?.amazon_selling_partner_id || '';
+  const refresh_token = location.state?.refresh_token || '';
 
   // State for managing the dropdown menu
   const [anchorEl, setAnchorEl] = useState(null);
@@ -38,6 +43,13 @@ export default function Dashboard() {
     setAnchorEl(null);
   };
 
+  // State for the selected option in the dropdown
+  const [selectedOption, setSelectedOption] = useState('DEFAULT');
+
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+
   return (
     <div className="add-store">
       <Aside />
@@ -46,10 +58,6 @@ export default function Dashboard() {
         <div className="nav-wrapper">
           <header className="nav header">
             <div className="list-item-link">
-              {/* <img className="png-icon" loading="lazy" alt="" src="/1png@2x.png" />
-              <div className="backgroundshadow-dash" /> */}
-
-              {/* Dropdown menu trigger */}
               <IconButton className='profile-icon' edge="end" color="inherit" aria-label="account" onClick={handleMenuClick}>
                 <AccountCircleIcon />
               </IconButton>
@@ -59,9 +67,9 @@ export default function Dashboard() {
                   'aria-labelledby': 'account-button',
                 }}
               >
-                <MenuItem class="p-link" onClick={handleMenuClose}>Profile</MenuItem>
-                <MenuItem class="p-link" onClick={handleMenuClose}>My account</MenuItem>
-                <MenuItem class="p-link" onClick={handleMenuClose}>Logout</MenuItem>
+                <MenuItem className="p-link" onClick={handleMenuClose}>Profile</MenuItem>
+                <MenuItem className="p-link" onClick={handleMenuClose}>My account</MenuItem>
+                <MenuItem className="p-link" onClick={handleMenuClose}>Logout</MenuItem>
               </Menu>
             </div>
           </header>
@@ -74,7 +82,25 @@ export default function Dashboard() {
             <div className="amazon-form">
               <form className="backgroundshadowdash1">
                 <div className="heading-wrapper">
-                  <h3 className="heading-5">Amazon Account Configuration</h3>
+                  <h3 className="heading-5">Amazon Account Configuration <CheckBoxIcon /></h3>
+                </div>
+                <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
+                  Your Amazon Credentials have been verified
+                </Alert>
+                <div className="o-auth-code-wrapper">
+                  <div className="o-auth-code">
+                    <div className="code-label">
+                      <CodeInput labelAMAZONOAUTHCODE="Amazon Shop Name" enterAmazonOauthCPlacehol=" Enter Amazon Shop Name"/>
+                      </div>
+                      <div className="code-labl">
+                      <label className='label-amazon' htmlFor="vendorSeller" style={{  }}>Vendor/Seller</label>
+                      <select id="vendorSeller" className='select-option' value={selectedOption} onChange={handleOptionChange} style={{ width: '100%', padding: '0.5rem' }}>
+                        <option value="DEFAULT">Select one</option>
+                        <option value="VENDOR">Vendor</option>
+                        <option value="SELLER">Seller</option>
+                      </select>
+                    </div>
+                  </div> 
                 </div>
                 <div className="config-form">
                   <div className="verify-instruction-wrapper">
@@ -84,7 +110,7 @@ export default function Dashboard() {
                           * Please click here to verify your account.
                         </div>
                       </div>
-                      <Button className="button" disableElevation variant="contained" onClick={handleAmazonVerification}
+                      <Button className="button b1" disableElevation variant="contained" onClick={handleAmazonVerification}
                         sx={{
                           textTransform: "none", color: "#530bae", fontSize: "15", background: "#e7e7ff", border: "#e7e7ff solid 1px", borderRadius: "6px",
                           "&:hover": { background: "#e7e7ff" }, width: 114.4, height: 38.5,
@@ -94,20 +120,15 @@ export default function Dashboard() {
                       </Button>
                     </div>
                   </div>
-                  <div className="separator" />
                 </div>
-                <div className="o-auth-code-wrapper">
-                  <div className="o-auth-code">
+                {/* <div className="o-auth-code-wrapper">
+                  <div className="o-auth-code"> 
                     <div className="code-label">
-                      <CodeInput labelAMAZONOAUTHCODE="AMAZON OAUTH CODE" enterAmazonOauthCPlacehol=" Enter Amazon Oauth Code"/>
-                      <RefreshToken labelAMAZONREFRESHTOKEN="AMAZON REFRESH TOKEN" containerPlaceholder="Enter Amazon Refresh Token"/>
-                    </div>
-                    <div className="code-label">
-                      <CodeInput propGap="0.593rem" labelAMAZONOAUTHCODE="AMAZON SELLING PARTNER ID" enterAmazonOauthCPlacehol="Enter Amazon Selling Partner Id" propWidth="13.938rem"/>
-                      <RefreshToken propHeight="4.056rem" propPadding="unset" labelAMAZONREFRESHTOKEN="AMAZON SHOP NAME" containerPlaceholder="Enter Amazon Shop Name"/>
-                    </div>
+                    <RefreshToken labelAMAZONREFRESHTOKEN="Amazon Selling Partner Id" containerPlaceholder={amazon_selling_partner_id}/>
+                    <RefreshToken propHeight="4.056rem" propPadding="unset" labelAMAZONREFRESHTOKEN="Amazon Refresh Token" containerPlaceholder={refresh_token} />
+                    </div>  
                   </div>
-                </div>
+                </div> */}
               </form>
             </div>
           </div>
