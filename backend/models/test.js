@@ -56,14 +56,21 @@ async function createDummyShops() {
       email: 'user2@example.com',
       name: 'User 2',
       shopList: [
-        {
-          shopId: 'SP11122',
-          collectionName: 'SellerCentralShops',
-          shopName: 'Shop 3'
-        }
+        // {
+        //   shopId: 'SP11122',
+        //   collectionName: 'SellerCentralShops',
+        //   shopName: 'Shop 3'
+        // }
       ]
     });
     await user2.save();
+
+    const user3 = new User({
+      email: 'user3@example.com',
+      name: 'User 3',
+    });
+    await user3.save();
+
 
     console.log('Dummy shops and users created successfully!');
   } catch (error) {
