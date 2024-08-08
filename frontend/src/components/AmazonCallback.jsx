@@ -58,7 +58,7 @@ const AmazonCallback = () => {
 
   return (
     <div>
-      Processing your Amazon authorization...
+      Processing your Amazon Credentials...
     </div>
   );
 };

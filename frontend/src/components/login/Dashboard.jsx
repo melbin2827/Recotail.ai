@@ -5,7 +5,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Aside from "./dashboard/Aside";
 import { API_BASE_URL } from '../../config'; 
 import CodeInput from "./dashboard/CodeInput";
-import RefreshToken from "./dashboard/RefreshToken";
+// import RefreshToken from "./dashboard/RefreshToken";
 import "./Dashboard.css";
 import Alert from '@mui/material/Alert';
 import CheckIcon from '@mui/icons-material/Check';
@@ -85,7 +85,7 @@ export default function Dashboard() {
                   <h3 className="heading-5">Amazon Account Configuration <CheckBoxIcon /></h3>
                 </div>
                 <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
-                  Here is a gentle confirmation that your action was successful.
+                  Your Amazon Credentials have been verified
                 </Alert>
                 <div className="o-auth-code-wrapper">
                   <div className="o-auth-code">
@@ -120,7 +120,6 @@ export default function Dashboard() {
                       </Button>
                     </div>
                   </div>
-                  {/* <div className="separator" /> */}
                 </div>
                 {/* <div className="o-auth-code-wrapper">
                   <div className="o-auth-code"> 
