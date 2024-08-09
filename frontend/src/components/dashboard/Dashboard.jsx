@@ -1,31 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Button, IconButton, Menu, MenuItem } from '@mui/material';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import MenuIcon from '@mui/icons-material/Menu';
+
 import Aside from "./Aside";
 import { API_BASE_URL } from '../../config'; 
 import CodeInput from "./CodeInput";
-// import RefreshToken from "./dashboard/RefreshToken";
 import "./Dashboard.css";
-import Alert from '@mui/material/Alert';
-import CheckIcon from '@mui/icons-material/Check';
-import CheckBoxIcon from '@mui/icons-material/CheckBox';
-import Avatar from '@mui/material/Avatar';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import PersonAdd from '@mui/icons-material/PersonAdd';
-import Settings from '@mui/icons-material/Settings';
-import Logout from '@mui/icons-material/Logout';
-import Divider from '@mui/material/Divider';
+
+import { Button, IconButton, Menu, MenuItem, Avatar, ListItemIcon, Divider, Alert} from '@mui/material';
+import {PersonAdd, Settings, Logout, Menu as MenuIcon, Check as CheckIcon } from '@mui/icons-material';
+// import RefreshToken from "./dashboard/RefreshToken";
+// import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 export default function Dashboard() {
   const [userName, setUserName] = useState('');
   const location = useLocation();
-  const email = location.state?.email;
-  const amazon_selling_partner_id = location.state?.amazon_selling_partner_id || '';
-  const refresh_token = location.state?.refresh_token || '';
+  const email = location.state?.email || 'abc@xyz.com';
+  // const amazon_selling_partner_id = location.state?.amazon_selling_partner_id || '';
+  // const refresh_token = location.state?.refresh_token || '';
 
-  // State for managing the dropdown menu
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -50,7 +42,6 @@ export default function Dashboard() {
     setAnchorEl(null);
   };
 
-  // State for the selected option in the dropdown
   const [selectedOption, setSelectedOption] = useState('DEFAULT');
 
   const handleOptionChange = (event) => {
@@ -71,14 +62,14 @@ export default function Dashboard() {
 
               {/* Dropdown Menu */}
               <Menu id="account-menu" anchorEl={anchorEl} open={open} onClose={handleMenuClose} MenuListProps={{'aria-labelledby': 'account-button',}}>
-                <MenuItem className="p-link pr-img" onClick={handleMenuClose}><Avatar alt="Cindy Baker" src="./3.png" />
-                {/* <span>Cindy Baker</span> */}
+                <MenuItem className="p-link pr-img" onClick={handleMenuClose}>
+                  <Avatar alt={userName} src="./3.png" />
                 </MenuItem>
                 <MenuItem className="p-link pr-img p-name" onClick={handleMenuClose}>
-                <span>Cindy Baker</span>
+                <span>{userName || 'abcd'}</span>
                 </MenuItem>
                 <MenuItem className="p-link pr-img emails">
-                <p>cindybaker@gmail.com</p>
+                  <p>{email}</p>
                 </MenuItem>
                 <Divider />
                 <MenuItem className="p-link" onClick={handleMenuClose}>
@@ -111,8 +102,8 @@ export default function Dashboard() {
                   <div className="o-auth-code">
                     <div className="code-label">
                       <CodeInput labelAMAZONOAUTHCODE="Amazon Shop Name*" enterAmazonOauthCPlacehol=" Enter Amazon Shop Name"/>
-                      </div>
-                      <div className="code-labl">
+                    </div>
+                    <div className="code-labl">
                       <label className='label-amazon' htmlFor="vendorSeller" style={{  }}>Vendor/Seller</label>
                       <select id="vendorSeller" className='select-option' value={selectedOption} onChange={handleOptionChange} style={{ width: '100%', padding: '0.5rem' }}>
                         <option value="DEFAULT">Select one</option>
