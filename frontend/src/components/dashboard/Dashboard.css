@@ -330,8 +330,33 @@
     font-weight: 500;
     padding: 10px 16px;
 }
+.emails {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  background-color: #e7e7ff;
+  color: #530bae !important;
+}
+.p-name {
+  padding-top: 10px !important;
+  padding-bottom: 5px !important;
+  background-color: #e7e7ff;
+  color: #530bae !important;
+}
+.emails:hover {
+  background-color: #e7e7ff;
+}
+.p-name:hover {
+  background-color: #e7e7ff;
+}
+.pr-img {
+  justify-content: center;
+}
+.pr-img span {
+  font-size: 16px;
+  margin-left: 12px;
+}
 .css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
-  left: 1400px !important;
+  left: 1310px !important;
 }
 
 .b1:hover {
@@ -371,4 +396,14 @@
   align-items: center;
   top: 10px;
   margin-top: 300px;
+}
+.css-9mgopn-MuiDivider-root {
+  border-color: #193a54 !important;
+  border-bottom-width: medium !important;
+  margin-top: 0px !important;
+}
+.pr-img .css-1wlk0hk-MuiAvatar-root {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #530bae;
 }
