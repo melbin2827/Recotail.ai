@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Button, IconButton, Menu, MenuItem } from '@mui/material';
+import { Button, Menu, MenuItem, ListItemIcon, Divider, IconButton, Tooltip, Avatar, Box, Typography } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import PersonAdd from '@mui/icons-material/PersonAdd';
+import Settings from '@mui/icons-material/Settings';
+import Logout from '@mui/icons-material/Logout';
 import Aside from "./Aside";
 import { API_BASE_URL } from '../../config'; 
 import CodeInput from "./CodeInput";
-// import RefreshToken from "./dashboard/RefreshToken";
 import "./Dashboard.css";
 import Alert from '@mui/material/Alert';
 import CheckIcon from '@mui/icons-material/Check';
-import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
 export default function Dashboard() {
   const [userName, setUserName] = useState('');
@@ -18,7 +19,6 @@ export default function Dashboard() {
   const amazon_selling_partner_id = location.state?.amazon_selling_partner_id || '';
   const refresh_token = location.state?.refresh_token || '';
 
-  // State for managing the dropdown menu
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -43,7 +43,6 @@ export default function Dashboard() {
     setAnchorEl(null);
   };
 
-  // State for the selected option in the dropdown
   const [selectedOption, setSelectedOption] = useState('DEFAULT');
 
   const handleOptionChange = (event) => {
@@ -58,18 +57,81 @@ export default function Dashboard() {
         <div className="nav-wrapper">
           <header className="nav header">
             <div className="list-item-link">
-              <IconButton className='profile-icon' edge="end" color="inherit" aria-label="account" onClick={handleMenuClick}>
-                <AccountCircleIcon />
-              </IconButton>
+              <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
+                <Tooltip title="Account settings">
+                  <IconButton
+                    onClick={handleMenuClick}
+                    size="small"
+                    sx={{ ml: 2 }}
+                    aria-controls={open ? 'account-menu' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={open ? 'true' : undefined}
+                  >
+                    <Avatar sx={{ width: 32, height: 32 }}>{userName.charAt(0).toUpperCase()}</Avatar>
+                  </IconButton>
+                </Tooltip>
+              </Box>
 
-              {/* Dropdown Menu */}
-              <Menu id="account-menu" anchorEl={anchorEl} open={open} onClose={handleMenuClose} MenuListProps={{
-                  'aria-labelledby': 'account-button',
+              <Menu
+                anchorEl={anchorEl}
+                id="account-menu"
+                open={open}
+                onClose={handleMenuClose}
+                onClick={handleMenuClose}
+                PaperProps={{
+                  elevation: 0,
+                  sx: {
+                    overflow: 'visible',
+                    filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+                    mt: 1.5,
+                    '& .MuiAvatar-root': {
+                      width: 32,
+                      height: 32,
+                      ml: -0.5,
+                      mr: 1,
+                    },
+                    '&::before': {
+                      content: '""',
+                      display: 'block',
+                      position: 'absolute',
+                      top: 0,
+                      right: 14,
+                      width: 10,
+                      height: 10,
+                      bgcolor: 'background.paper',
+                      transform: 'translateY(-50%) rotate(45deg)',
+                      zIndex: 0,
+                    },
+                  },
                 }}
+                transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+                anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
               >
-                <MenuItem className="p-link" onClick={handleMenuClose}>Profile</MenuItem>
-                <MenuItem className="p-link" onClick={handleMenuClose}>My account</MenuItem>
-                <MenuItem className="p-link" onClick={handleMenuClose}>Logout</MenuItem>
+                <MenuItem onClick={handleMenuClose}>
+                  <Avatar /> Profile
+                </MenuItem>
+                <MenuItem onClick={handleMenuClose}>
+                  <Avatar /> My account
+                </MenuItem>
+                <Divider />
+                <MenuItem onClick={handleMenuClose}>
+                  <ListItemIcon>
+                    <PersonAdd fontSize="small" />
+                  </ListItemIcon>
+                  Add another account
+                </MenuItem>
+                <MenuItem onClick={handleMenuClose}>
+                  <ListItemIcon>
+                    <Settings fontSize="small" />
+                  </ListItemIcon>
+                  Settings
+                </MenuItem>
+                <MenuItem onClick={handleMenuClose}>
+                  <ListItemIcon>
+                    <Logout fontSize="small" />
+                  </ListItemIcon>
+                  Logout
+                </MenuItem>
               </Menu>
             </div>
           </header>
